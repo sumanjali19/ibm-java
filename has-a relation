@@ -1,0 +1,23 @@
+class Animal {
+    String species;
+    int age;
+}
+
+class Dog {
+    Animal pet;
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myPet = new Animal();
+        myPet.species = "Labrador";
+        myPet.age = 3;
+
+        Dog myDog = new Dog();
+        myDog.pet = myPet;
+
+        System.out.println("Dog's Pet:");
+        System.out.println("Species: " + myDog.pet.species);
+        System.out.println("Age: " + myDog.pet.age + " years");
+    }
+}
