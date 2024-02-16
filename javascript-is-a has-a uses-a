@@ -1,0 +1,40 @@
+// is-a relationship in javascript
+class Animal {
+    eat() {
+        console.log("Animal is eating");
+    }
+}
+
+class Dog extends Animal {
+    bark() {
+        console.log("Dog is barking");
+    }
+}
+
+let myDog = new Dog();
+myDog.eat(); // Output: Animal is eating
+myDog.bark(); // Output: Dog is barking
+
+
+
+//has-relationship-composition
+class Animal {}
+
+class Dog {
+    constructor() {
+        this.pet = new Animal();
+    }
+}
+
+let myDog = new Dog();
+console.log(myDog.pet); // Output: Animal {}
+
+
+
+
+//uses-a relationship -dependency
+class Animal { makeSound(sound) { console.log(sound); } }
+class Dog { constructor() { this.animal = new Animal(); } bark() { this.animal.makeSound("Woof!"); } }
+
+let myDog = new Dog();
+myDog.bark(); // Output: Woof!
