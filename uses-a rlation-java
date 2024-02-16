@@ -1,0 +1,30 @@
+// Example of "uses-a" relationship
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+class Dog {
+    private Animal animal; // Dog class uses Animal class
+
+    public Dog() {
+        this.animal = new Animal(); // Instantiate Animal object
+    }
+
+    void makeSound() {
+        System.out.println("Dog is barking");
+    }
+
+    void feed() {
+        animal.eat(); // Dog class utilizes the eat() method from Animal class
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.makeSound(); // Dog makes sound
+        myDog.feed(); // Dog eats
+    }
+}
